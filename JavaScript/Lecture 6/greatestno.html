@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greatest Number</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script>
+
+
+        function check() {
+            var num1 = parseInt(document.getElementById('num1').value);
+            var num2 = parseInt(document.getElementById('num2').value);
+            var num3 = parseInt(document.getElementById('num3').value);
+
+            var string = ' is largest number';
+
+            switch ((num1 > num2 && num1 > num3) ? num1 : (num2 > num3) ? num2 : num3) {
+                case num1:
+                    document.getElementById("res").innerHTML = num1 + string;
+                    break;
+                case num2:
+                    document.getElementById("res").innerHTML = num2 + string;
+                    break;
+                case num3:
+                    document.getElementById("res").innerHTML = num3 + string;
+                    break;
+                default:
+                    document.getElementById("res").innerHTML = "Enter Valid Number";
+                    break;
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <div class="container-fluid d-sm-flex justify-content-center align-items-center" style="height: 100vh;">
+        <div class="card text-center" style="width: 18rem;">
+            <div class="card-header">
+                <h5 class="text-dark card-title">Check Greatest Number</h5>
+            </div>
+            <div class="card-body">
+                <input type="text" class="form-control my-2" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-default" id="num1" placeholder="Enter a Number">
+                <input type="text" class="form-control my-2" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-default" id="num2" placeholder="Enter a Number">
+                <input type="text" class="form-control my-2" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-default" id="num3" placeholder="Enter a Number">
+                <button class="btn btn-outline-secondary my-3" onclick="check()">Click</button>
+            </div>
+            <div class="card-footer">
+                <h6 id="res"></h6>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

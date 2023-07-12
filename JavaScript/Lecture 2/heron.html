@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heron's Fromula</title>
+    <script>
+        function areaTri() {
+            var valA = parseInt(document.getElementById("len-a").value)
+            var valB = parseInt(document.getElementById("len-b").value)
+            var valC = parseInt(document.getElementById("len-c").value)
+
+            var semPer = ((valA + valB + valC) / 2)
+            let area = semPer * (semPer - valA) * (semPer - valB) * (semPer - valC);
+            document.write("The area of triangle is " + Math.sqrt(area));
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container"
+        style="width: 100%;height: 100vh;display: flex;justify-content: center;align-items: center;flex-direction: column;">
+        <h1>Heron's Formula</h1>
+        <input type="number" id="len-a" placeholder="Enter Length Of Side A"
+            style="width:250px;height: 40px;margin-bottom: 15px;padding-left: 15px;" /><br>
+        <input type="number" id="len-b" placeholder="Enter Length Of Side B"
+            style="width:250px;height: 40px;margin-bottom: 15px;padding-left: 15px;" /><br>
+        <input type="number" id="len-c" placeholder="Enter Length Of Side C"
+            style="width:250px;height: 40px;margin-bottom: 15px;padding-left: 15px;" /><br>
+        <input type="button" value="Click" style="width:250px;height: 40px;" onclick="areaTri()">
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse Number</title>
+    <script>
+
+        function reverse() {
+            var num = parseInt(document.getElementById("num").value);
+
+            var revNum = 0;
+            revNum = (revNum * 10) + (num % 10);
+            num = Math.floor(num / 10);
+
+            revNum = (revNum * 10) + (num % 10);
+            num = Math.floor(num / 10);
+
+            revNum = (revNum * 10) + (num % 10);
+            num = Math.floor(num / 10);
+
+            revNum = (revNum * 10) + (num % 10);
+            num = Math.floor(num / 10);
+
+            revNum = (revNum * 10) + (num % 10);
+            num = Math.floor(num / 10);
+
+            document.write("The Reverse Number is " + revNum)
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container"
+        style="width: 100%;height: 100vh;display: flex;justify-content: center;align-items: center;flex-direction: column;">
+        <h1>Reverse Number</h1>
+        <input type="number" id="num" placeholder="Enter a Five Digit Number"
+            style="width:250px;height: 40px;margin-bottom: 15px;padding-left: 15px;" /><br>
+        <input type="button" value="Click" style="width: 250px;height: 40px;font-size: 20px;" onclick="reverse()">
+    </div>
+</body>
+
+</html>

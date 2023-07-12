@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salary Calculator</title>
+    <script>
+        function calSal() {
+            var basSal = parseInt(document.getElementById("bassal").value)
+            var ta = parseInt(document.getElementById("ta").value)
+            var da = parseInt(document.getElementById("da").value)
+            var comm = parseInt(document.getElementById("comm").value)
+            var pf = parseInt(document.getElementById("pf").value)
+            var nOfLeaves = parseInt(document.getElementById("leaves").value)
+
+            var absent = (nOfLeaves * basSal) / 26
+
+            var totSal = ((basSal + ta + da + comm) - (pf + absent));
+
+            document.write("Total Salary is " + totSal);
+        }
+    </script>
+</head>
+
+<body>
+
+    <div class="container"
+        style="display: flex;align-items: center;justify-content: center;flex-direction: column;height: 100vh;">
+        <h1>Salary Calculator</h1>
+        <input type="number" id="bassal" placeholder="Enter Basic Salary"
+            style="height: 50px;margin-bottom: 20px;width: 250px;padding-left: 20px;" /><br>
+        <input type="number" id="ta" placeholder="Enter Traveling Allowance"
+            style="height: 50px;margin-bottom: 20px;width: 250px;padding-left: 20px;" /><br>
+        <input type="number" id="da" placeholder="Enter Dearness Allowance"
+            style="height: 50px;margin-bottom: 20px;width: 250px;padding-left: 20px;" /><br>
+        <input type="number" id="comm" placeholder="Enter Commission"
+            style="height: 50px;margin-bottom: 20px;width: 250px;padding-left: 20px;" /><br>
+        <input type="number" id="pf" placeholder="Enter Provident Fund"
+            style="height: 50px;margin-bottom: 20px;width: 250px;padding-left: 20px;" /><br>
+        <input type="number" id="leaves" placeholder="Enter Number Of Leaves(in days)"
+            style="height: 50px;margin-bottom: 20px;width: 250px;padding-left: 20px;" /><br>
+        <input type="button" value="Click" style="width: 250px;height: 50px;font-size: 20px;" onclick="calSal()">
+    </div>
+</body>
+
+</html>

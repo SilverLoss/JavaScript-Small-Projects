@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecture 3 - Assignment</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        function CtoF() {
+            let value = parseInt(document.getElementById("value").value);
+            let result = ((value / 5) * 9) + 32;
+            document.write(`${value}°Celsius To Fahrenheit is ${result}`);
+        }
+
+        function FtoC() {
+            let value = parseInt(document.getElementById("value").value);
+            let result = ((value - 32) * 5) / 9;
+            document.write(`${value}°Fahrenheit To Celsius is ${result}`)
+        }
+
+        function ItoF() {
+            let value = parseInt(document.getElementById("value1").value);
+            let result = value / 12;
+            document.write(`${value} Inch is ${result} Feet`)
+        }
+
+        function FtoI() {
+            let value = parseInt(document.getElementById("value1").value);
+            let result = value * 12;
+            document.write(`${value} Feet is ${result} Inches`)
+        }
+
+        function HtoA() {
+            let value = parseInt(document.getElementById("value2").value);
+            let result = value * 2.471;
+            document.write(`${value} hectare is ${result} acre`)
+        }
+
+        function AtoH() {
+            let value = parseInt(document.getElementById("value2").value);
+            let result = value / 2.471;
+            document.write(`${value} acre is ${result} hectare`)
+        }
+
+        function DtoB() {
+            let value = document.getElementById("value3").value;
+
+            var rem1 = parseInt(value) % 2;
+            var num1 = parseInt(value) / 2;
+
+            var rem2 = parseInt(num1) % 2;
+            var num2 = parseInt(num1) / 2
+
+            var rem3 = parseInt(num2) % 2;
+            var num3 = parseInt(num2) / 2
+
+            var rem4 = parseInt(num3) % 2;
+            var num4 = parseInt(num3) / 2
+
+
+            var rem5 = parseInt(num4) % 2;
+            var num5 = parseInt(num4) / 2
+
+            let result = rem5 * 10000 + rem4 * 1000 + rem3 * 100 + rem2 * 10 + rem1 * 1;
+            document.write(`The Binary Number of Decimal ${value} is ${result}`);
+        }
+
+        function reverse() {
+            let value = parseInt(document.getElementById("value4").value);
+
+            let rem = value % 10;
+            var num = parseInt(value / 10);
+
+            let rem1 = num % 10;
+            num = parseInt(num / 10);
+
+            let rem2 = num % 10;
+            num = parseInt(num / 10);
+
+            let rem3 = num % 10;
+            num = parseInt(num / 10);
+
+            let rem4 = num % 10;
+
+            let result = rem4 * 10000 + rem1 * 1000 + rem2 * 100 + rem3 * 10 + rem * 1;
+
+            document.write(`Reverse of ${value} is ${result}`)
+        }
+    
+    </script>
+</head>
+
+<body>
+    <div class="container-fluid p-5">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <!-- Temperature Convertor -->
+            <div class="col">
+                <div class="card border-success text-center">
+                    <h3 class="card-header">Temperature Convertor</h3>
+                    <div class="card-body">
+                        <div class="col-auto px-4">
+                            <input type="text" class="form-control" id="value" placeholder="Enter Value">
+                        </div>
+                        <br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="CtoF"
+                                value="option1" onclick="CtoF()">
+                            <label class="form-check-label" for="inlineRadio1">Celsius to Fahrenheit</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="FtoC"
+                                value="option2" onclick="FtoC()">
+                            <label class="form-check-label" for="inlineRadio2">Fahrenheit to Celsius</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Length Convertor -->
+            <div class="col">
+                <div class="card border-success text-center">
+                    <h3 class="card-header">Length Convertor</h3>
+                    <div class="card-body">
+                        <div class="col-auto px-4">
+                            <input type="text" class="form-control" id="value1" placeholder="Enter Value">
+                        </div>
+                        <br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="CtoF"
+                                value="option1" onclick="ItoF()">
+                            <label class="form-check-label" for="inlineRadio1">Inch to Feet</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="FtoC"
+                                value="option2" onclick="FtoI()">
+                            <label class="form-check-label" for="inlineRadio2">Feet to Inch</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Area Convertor -->
+            <div class="col">
+                <div class="card border-success text-center">
+                    <h3 class="card-header">Area Convertor</h3>
+                    <div class="card-body">
+                        <div class="col-auto px-4">
+                            <input type="text" class="form-control" id="value2" placeholder="Enter Value">
+                        </div>
+                        <br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="CtoF"
+                                value="option1" onclick="HtoA()">
+                            <label class="form-check-label" for="inlineRadio1">Hectare to Acre</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="FtoC"
+                                value="option2" onclick="AtoH()">
+                            <label class="form-check-label" for="inlineRadio2">Acre to Hectare</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Decimal To Binary -->
+            <div class="col">
+                <div class="card border-success text-center">
+                    <h3 class="card-header">Decimal to Binary</h3>
+                    <div class="card-body">
+                        <div class="col-auto px-4">
+                            <input type="text" class="form-control" id="value3" placeholder="Enter Value (upto 20)">
+                        </div>
+                        <br>
+                        <button class="btn btn-outline-success" onclick="DtoB()">Click</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reverse -->
+            <div class="col">
+                <div class="card border-success text-center">
+                    <h3 class="card-header">Reverse the Number</h3>
+                    <div class="card-body">
+                        <div class="col-auto px-4">
+                            <input type="text" class="form-control" id="value4" placeholder="Enter a Five Digit Number">
+                        </div>
+                        <br>
+                        <button class="btn btn-outline-success" onclick="reverse()">Click</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

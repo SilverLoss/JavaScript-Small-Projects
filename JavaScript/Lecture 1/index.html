@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Practice</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+
+        function calcSI() {
+            var principal = parseInt(document.getElementById("pAmount").value);
+            var roi = parseInt(document.getElementById("roi").value);
+            var time = parseInt(document.getElementById("time").value);
+            var si = (principal * roi * time) / 100;
+            document.write("The Simple Interest is " + si);
+        }
+
+        function calcCI() {
+            var principal = parseInt(document.getElementById('principal').value);
+            var rate = parseInt(document.getElementById('rate').value);
+            var timeY = parseInt(document.getElementById('timeyears').value);
+            var rate1 = (1 + rate / 100);
+            var frate = Math.pow(rate1, timeY);
+            var ci = ((principal * frate) - principal);
+            document.write("The compound interest is " + ci);
+        }
+
+        function areaOfCircle() {
+            var radius = parseInt(document.getElementById("radius").value);
+            var area = ((22 / 7) * (radius * radius));
+            document.write("The area of circle is " + area);
+        }
+
+        function areaOfTriangle() {
+            var base = parseInt(document.getElementById("base").value);
+            var height = parseInt(document.getElementById("height").value);
+            var area = (base * height) / 2;
+            document.write("The area of triangle is " + area);
+        }
+
+        function swapNum() {
+            var x = parseInt(document.getElementById("num1").value)
+            var y = parseInt(document.getElementById("num2").value)
+            var temp = x;
+            // console.log(temp);
+            x = y;
+            // console.log(x);
+            y = temp;
+            // console.log(y);
+            document.write("The swapped value of X is " + x + "<br>" + "The swapped value of Y is " + y)
+        }
+
+    </script>
+</head>
+
+<body>
+
+    <div class="container-fluid pt-5" style="height: 100vh;">
+        <div class="card-deck mt-5">
+            <!-- Simple Interest -->
+            <div class="card bg-light">
+                <div class="card-header text-center">
+                    <h4 class="card-title">Simple Interest</h4>
+                </div>
+                <div class="card-body text-center">
+                    <input type="number" id="pAmount" placeholder="Enter Principal Amount"
+                        class="w-100 pl-2 rounded border border-light" style="height: 50px;" />
+                    <input type="number" id="roi" placeholder="Enter Rate Of Interest"
+                        class="w-100 pl-2 rounded border border-light my-4" style="height: 50px;" />
+                    <input type="number" id="time" placeholder="Enter Time(In Years)"
+                        class="w-100 pl-2 rounded border border-light mb-4" style="height: 50px;">
+                </div>
+                <div class="card-footer">
+                    <input type="button" value="Submit" class="btn btn-success w-100"
+                        style="height: 50px;font-size: 22px;" onclick="calcSI()">
+                </div>
+            </div>
+
+            <!-- Compound Interest -->
+            <div class="card bg-light">
+                <div class="card-header text-center">
+                    <h4 class="card-title">Compound Interest</h4>
+                </div>
+                <div class="card-body text-center">
+                    <input type="number" id="principal" placeholder="Enter Principal Amount"
+                        class="w-100 pl-2 rounded border border-light" style="height: 50px;" />
+                    <input type="number" id="rate" placeholder="Enter Rate Of Interest"
+                        class="w-100 pl-2 rounded border border-light my-4" style="height: 50px;" />
+                    <input type="number" id="timeyears" placeholder="Enter Time(In Years)"
+                        class="w-100 pl-2 rounded border border-light mb-4" style="height: 50px;">
+                </div>
+                <div class="card-footer">
+                    <input type="button" value="Submit" class="btn btn-success w-100"
+                        style="height: 50px;font-size: 22px;" onclick="calcCI()">
+                </div>
+            </div>
+
+            <!-- Area of circle -->
+            <div class="card bg-light">
+                <div class="card-header text-center">
+                    <h4 class="card-title">Area Of Circle</h4>
+                </div>
+                <div class="card-body text-center">
+                    <input type="number" id="radius" placeholder="Enter Radius"
+                        class="w-100 pl-2 my-5 rounded border border-light" style="height: 50px;" />
+                </div>
+                <div class="card-footer">
+                    <input type="button" value="Submit" class="btn btn-success w-100"
+                        style="height: 50px;font-size: 22px;" onclick="areaOfCircle()">
+                </div>
+            </div>
+
+            <!-- Area of triangle -->
+            <div class="card bg-light">
+                <div class="card-header text-center">
+                    <h4 class="card-title">Area Of Triangle</h4>
+                </div>
+                <div class="card-body text-center">
+                    <input type="number" id="base" placeholder="Enter Base Of Triangle"
+                        class="w-100 pl-2 rounded border border-light" style="height: 50px;" />
+                    <input type="number" id="height" placeholder="Enter Height Of Triangle"
+                        class="w-100 pl-2 rounded border border-light my-4" style="height: 50px;" />
+                </div>
+                <div class="card-footer">
+                    <input type="button" value="Submit" class="btn btn-success w-100"
+                        style="height: 50px;font-size: 22px;" onclick="areaOfTriangle()">
+                </div>
+
+            </div>
+
+            <!-- Swap Two Numbers -->
+            <div class="card bg-light">
+                <div class="card-header">
+                    <h4 class="card-title text-center">Swap Two Numbers</h4>
+                </div>
+                <div class="card-body text-center">
+                    <input type="number" id="num1" placeholder="Enter Value Of X"
+                        class="w-100 pl-2 rounded border border-light" style="height: 50px;" />
+                    <input type="number" id="num2" placeholder="Enter Value Of Y"
+                        class="w-100 pl-2 rounded border border-light my-4" style="height: 50px;" />
+                </div>
+                <div class="card-footer">
+                    <input type="button" value="Submit" class="btn btn-success w-100"
+                        style="height: 50px;font-size: 22px;" onclick="swapNum()">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
