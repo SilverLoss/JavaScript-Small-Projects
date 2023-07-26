@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum Of Date Of Birth (do-while loop)</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+
+        function check() {
+            var val1 = parseInt(document.getElementById('val1').value)
+            var val2 = parseInt(document.getElementById('val2').value)
+            var val3 = parseInt(document.getElementById('val3').value)
+            var i = 0;
+            do {
+                var sum = val1 + val2 + val3;
+                document.getElementById('res').innerHTML = `The sum is ${sum}`;
+                i++;
+            } while (i < 1);
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container-fluid" style="height: 100vh;">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-sm-5">
+                <div class="card border-primary text-center">
+                    <div class="card-header">
+                        <h4 class="card-title">Sum Of DOB</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group mb-3">
+                            <input type="text" class="form-control mb-2" placeholder="Enter a day(1 to 31)" name="number"
+                                id="val1">
+                            <input type="text" class="form-control mb-2" placeholder="Enter a month(1 to 12)" name="number"
+                                id="val2">
+                            <input type="text" class="form-control mb-2" placeholder="Enter a year" name="number" id="val3">
+                        </div>
+                        <button type="button" class="btn btn-outline-danger" onclick="check()">Submit</button>
+                    </div>
+                    <div class="card-footer">
+                        <h5 id="res"></h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

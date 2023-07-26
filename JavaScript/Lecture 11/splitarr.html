@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Split Array</title>
+</head>
+
+<body>
+    <script>
+        var arr = [1, 5, 7, 10, 2, 6, 8, 16, 20];
+        var arr1 = [];
+        var arr2 = [];
+        var arr3 = [];
+
+        var size = arr.length;
+        var size1 = Math.floor(size / 3);
+        var size2 = Math.floor(size / 3);
+        var size3 = Math.floor(size - (size1 + size2));
+
+        // document.write(size + "<br>" + size1 + "<br>" + size2 + "<br>" + size3)
+        for (var i = 0; i < arr.length; i++) {
+
+            if (i < size1) {
+                arr1.push(arr[i])
+            } else if (i < size1 + size2) {
+                arr2.push(arr[i])
+            } else {
+                arr3.push(arr[i])
+            }
+
+        }
+        for (var j of arr1) {
+            document.write(j + "&nbsp;")
+        }
+        document.write("<br>")
+        for (var k of arr2) {
+            document.write(j + "&nbsp;")
+        }
+        document.write("<br>")
+        for (var k of arr3) {
+            document.write(k + "&nbsp;")
+        }
+    </script>
+</body>
+
+</html>

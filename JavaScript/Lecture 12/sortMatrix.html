@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sort In Matrix</title>
+    <script>
+        var arr = [[1, 4, 2, 5], [3, 10, 5, 8], [15, 13, 18, 21]];
+        for (var i = 0; i < arr.length; i++) {
+            var swap = 0;
+            for (var j = 0; j < arr[i].length; j++) {
+                if (arr[i][j + 1] < arr[i][j]) {
+                    swap = arr[i][j];
+                    arr[i][j] = arr[i][j + 1]
+                    arr[i][j + 1] = swap;
+                }
+            }
+            document.write("The Swapped Array is " + arr[i] + "<br>")
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

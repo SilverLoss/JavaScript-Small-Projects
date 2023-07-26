@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valid Phone Number</title>
+    <script>
+        var s = '919612345678';
+        // var s = '09612345678';
+        // var s = '9612345678';
+
+        var flag = false;
+        for (var i = 0; i < s.length; i++) {
+            if (s.length <= 12 && s.length >= 10) {
+                if (s[0] == '9' && s[1] == '1' && s.length >= 12) {
+                    if (s[2] == '6' || s[2] == '7' || s[2] == '8' || s[2] == '9') {
+                        flag = true;
+                        break;
+                    }
+                } else if (s[0] == '0' && s.length <= 11) {
+                    if (s[1] == '6' || s[1] == '7' || s[1] == '8' || s[1] == '9') {
+                        flag = true;
+                        break;
+                    }
+                } else if (s.length == 10) {
+                    if (s[0] == '6' || s[0] == '7' || s[0] == '8' || s[0] == '9') {
+                        flag = true;
+                        break;
+                    }
+                }
+            }
+            break;
+        }
+
+        if (flag) {
+            document.write("Valid Number")
+        } else {
+            document.write("Not Valid Number")
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

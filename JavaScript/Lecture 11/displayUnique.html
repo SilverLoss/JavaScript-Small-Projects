@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Unique Number</title>
+</head>
+
+<body>
+    <script>
+
+        var arr = [1, 2, 3, 2, 1, 4];
+        for (var i = 0; i < arr.length; i++) {  
+            var count = 0;
+            for (var j = 0; j < arr.length; j++) { 
+                if (i != j) {
+                    if (arr[i] == arr[j]) {
+                        count++;
+                    }
+                }
+            }
+            if (count == 0) {
+                document.write("The Unique Number is " + arr[i] + "<br>")
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum Of Prime & Non Prime</title>
+    <script>
+
+        var arr = [2, 4, 6, 5, 11, 7, 13, 9, 10];
+        var primeSum = 0, nonPrimeSum = 0;
+
+        for (var i = 0; i < arr.length; i++) {
+            var flag = true;
+            for (var k = 2; k < arr[i]; k++) {
+                if (arr[i] == 0 || arr[i] == 1) {
+                    nonPrimeSum += arr[i];
+                }
+                if (arr[i] % k == 0) {
+                    flag = false;
+                }
+            }
+            if (flag) {
+                primeSum += arr[i];
+            } else {
+                nonPrimeSum += arr[i]
+            }
+        }
+        document.write("The Sum Of Prime Number is " + primeSum + "<br>")
+        document.write("The Sum Of Non Prime Number is " + nonPrimeSum)
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

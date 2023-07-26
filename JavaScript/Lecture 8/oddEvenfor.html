@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Even & Odd Factorial & Table (for loop)</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+
+        function check() {
+            var val = parseInt(document.getElementById('val').value);
+            if (val % 2 == 0) {
+                var factorial = 1;
+                for (var i = val; i > 1; i--) {
+                    factorial *= i;
+                }
+                document.getElementById("res").innerHTML = "The Factorial of a number is " + factorial;
+            } else {
+                for (var i = 1; i <= 10; i++) {
+                    var res = val * i;
+                    document.write(`${val} X ${i} = ${res} <br>`);
+                }
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <div class="container-fluid" style="height: 100vh;">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-sm-5">
+                <div class="card border-primary text-center">
+                    <div class="card-header">
+                        <h4 class="card-title">Odd Even</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group mb-3">
+                            <input type="text" class="form-control" placeholder="Enter a Number" name="number" id="val">
+                        </div>
+                        <button type="button" class="btn btn-outline-danger" onclick="check()">Submit</button>
+                    </div>
+                    <div class="card-footer">
+                        <h3 id="res"></h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

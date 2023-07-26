@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Count Numeric, alphabetical & special Character</title>
+</head>
+
+<body>
+    <script>
+        var s = "** learnig a string 123456789 ##";
+        var alpha = 0;
+        var num = 0;
+        var special = 0;
+
+        for (var i = 0; i < s.length; i++) {
+            if (s[i] >= 'a' && s[i] <= 'z' || s[i] >= 'A' && s[i] <= 'Z') {
+                alpha++;
+            } else if (s[i] >= '1' || '9' <= s[i]) {
+                num++
+            }
+            else {
+                special++;
+            }
+        }
+        document.write("Total Alphabets are " + alpha + "<br>" + "Total Numeric Values are " + num + "<br>" + "Total Special Characters are(Including Spaces) are " + special + "<br>")
+    </script>
+</body>
+
+</html>

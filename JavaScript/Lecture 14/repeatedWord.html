@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repeated character in each word</title>
+    <script>
+        var s = "it is a long established fact that a reader will be distracted";
+        var arr = [];
+        var s1 = '';
+        var count = 0;
+
+        for (var i of s) {
+            if (i == " ") {
+                arr.push(s1);
+                s1 = "";
+            } else {
+                s1 += i;
+            }
+        }
+
+        if (s1 != "") {
+            arr.push(s1);
+        }
+
+        for (var j = 0; j < arr.length; j++) {
+            var s2 = arr[j];
+            for (var k = 0; k < s2.length; k++) {
+                for (var l = k + 1; l < s2.length; l++) {
+                    if (s2[l] == s2[k]) {
+                        count++;
+                    }
+                }
+            }
+            if (count >= 1) {
+                document.write("The repeated character count in word " + s2 + " is " + count + "<br>")
+                count = 0;
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

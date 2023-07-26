@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Max , Second , Third Max</title>
+</head>
+
+<body>
+
+    <script>
+
+        var arr = [1, 7, 5, 15, 30, 9, 50, 20];
+        var max1 = 0, max2 = 0; max3 = 0;
+
+        for (var i = 0; i < arr.length; i++) { // 7
+            if (max1 < arr[i]) {    // 50 < 20
+                max2 = max1;   // max2 = 30
+                max1 = arr[i];  // max1 = 50
+            } else if (max2 < arr[i]) {      // 30 < 20 
+                max2 = arr[i];              // max2 = 30
+                max3 = max2;    
+            } else if (max3 < arr[i]) {  // 9 < 20
+                max3 = arr[i];            // max3 = 20
+            }
+
+        }
+        document.write("Maximum Number is " + max1 + "<br>")
+        document.write("Second Maximum Number is " + max2 + "<br>")
+        document.write("Third Maximum Number is " + max3 + "<br>")
+    </script>
+
+</body>
+
+</html>

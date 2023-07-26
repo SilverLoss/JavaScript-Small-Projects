@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Max & Second Max</title>
+    <script>
+        var arr = [10, 6, 4, 20, 15];
+        var swap;
+
+        for (var i = 0; i < arr.length; i++) {
+            for (var j = arr.length; j >= 0; j--) {
+                if (arr[j] > arr[j-1]) {
+                    swap = arr[j];
+                    arr[j] = arr[j - 1]
+                    arr[j - 1] = swap;
+                }
+            }
+        }
+        document.write("The Maximum Number is " + arr[0] + " & The Second Maximum Number is " + arr[1])
+
+
+
+        
+        //2.
+        // var newArr = arr.sort(function (a, b) { return b - a });
+        // var maximum = arr[0]
+        // var secondMaximum = arr[1];
+        // document.write("Maximum is " + maximum + "<br>" + " Second maximum is " + secondMaximum);
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

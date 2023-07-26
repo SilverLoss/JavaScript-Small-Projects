@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Max Second Max Each Row in Matrix</title>
+    <script>
+        var arr = [[1, 2, 10, 3], [15, 6, 7, 5]];
+
+        var max = 0, sMax = 0;
+        for (var i = 0; i < arr.length; i++) {
+            max = 0;
+            for (var j = 0; j < arr[i].length; j++) {
+                if (arr[i][j] > max) {
+                    sMax = max;
+                    max = arr[i][j]
+                } else if (arr[i][j] > sMax) {
+                    sMax = arr[i][j];
+                }
+            }
+            document.write("Maximum Element is " + max + " & Second Maximum Element is " + sMax + "<br>");
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

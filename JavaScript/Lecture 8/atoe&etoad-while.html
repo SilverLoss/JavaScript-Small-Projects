@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>a to e & e to a (do-while loop)</title>
+    <script>
+        var i = 1;
+        do {
+            if (i <= 1) {
+                var j = 97;
+                do {
+                    var text1 = String.fromCharCode(j);
+                    document.write(text1 + "<br>")
+                    j++;
+                } while (j <= 101);
+            } else {
+                var k = 101;
+                do {
+                    var text2 = String.fromCharCode(k);
+                    document.write(text2 + "<br>");
+                    k--;
+                } while (k >= 97);
+            }
+            i++;
+        } while (i <= 2);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

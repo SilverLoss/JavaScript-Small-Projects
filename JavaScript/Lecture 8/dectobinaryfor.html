@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decimal to Binary (for loop)</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function check() {
+            var val = parseInt(document.getElementById('val').value)
+            var rem = 0;
+            // var str = '';
+            // for (var i = 0; val > 0; i++) {
+            //     rem = str + val % 2;
+            //     str = rem;
+            //     val = Math.floor(val / 2)
+            // }
+            // var str1 = "", ch = "";
+            // for (var j = 0; j <= str.length; j++) {
+            //     ch = str.charAt(j);
+            //     str1 = ch + str1;
+            // }
+            // document.getElementById('res').innerHTML = `Binary is ${str1}`
+            var binary = 0;
+            var placeChange = 1;
+
+            for (var i = 0; 0 < val; i++) {
+                rem = val % 2;
+                val = Math.floor(val / 2);
+                binary = binary + (rem * placeChange);
+                placeChange = placeChange * 10;
+            }
+            document.getElementById('res').innerHTML = `Binary is ${binary}`
+
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container-fluid" style="height: 100vh;">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-sm-5">
+                <div class="card border-primary text-center">
+                    <div class="card-header">
+                        <h4 class="card-title">Decimal To Binary</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group mb-3">
+                            <input type="text" class="form-control" placeholder="Enter a Number" name="number" id="val">
+                        </div>
+                        <button type="button" class="btn btn-outline-danger" onclick="check()">Submit</button>
+                    </div>
+                    <div class="card-footer">
+                        <h5 id="res"></h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

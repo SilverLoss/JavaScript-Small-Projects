@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Array Palindrome </title>
+    <script>
+
+        var arr = ['aaa', 'rajat', 'ddddddddd', 'civic', 'eeeee'];
+        var size = arr.length;
+        var max = 0;
+        var maxString = "";
+
+        for (var i = 0; i < size; i++) {
+            var string = arr[i];
+            var check = true;
+            for (var j = 0; j < string.length / 2; j++) {
+                if (string[j] != string[size - j - 1]) {
+                    check = false;
+                    break;
+                }
+            }
+            if (check) {
+                if (max < string.length) {
+                    max = string.length;
+                    maxString = string;
+                }
+            }
+        }
+        document.write("Max length palindrome " + maxString + " <br>");
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

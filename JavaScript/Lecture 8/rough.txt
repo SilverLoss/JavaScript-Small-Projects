@@ -1,0 +1,19 @@
+
+for (var i = 1; i <= val; i++) {
+  nextVal = val1 + val2;
+  if (nextVal > val) {
+    break;
+  } else {
+    for (var j = 1; j <= val; j++) {
+      if (nextVal % j == 0) {
+        prime++;
+      }
+    }
+    if (prime == 2) {
+      console.log(nextVal);
+    }
+    val1 = val2;
+    val2 = nextVal;
+    prime = 0;
+  }
+}

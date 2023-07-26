@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Vowel & Consonant</title>
+</head>
+
+<body>
+    <script>
+        var arr = ["check", "vowel", "and", "consonant"];
+        var sizeArr = arr.length;
+        var consonant = 0;
+        var vowel = 0;
+        for (var i = 0; i < sizeArr; i++) {
+            var flag = true;
+            var s = arr[i];
+            // console.log(s)
+            for (var j = 0; j < s.length; j++) {
+                if (s[j] == 'a' || s[j] == 'e' || s[j] == 'i' || s[j] == 'o' || s[j] == 'u') {
+                    var flag = false;
+                    vowel++;
+                    console.log(s[j])
+                } else {
+                    consonant++;
+                }
+            }
+        }
+        document.write("Total Count of Vowel is " + vowel + "<br>" + "Total Count of Consonant is " + consonant);
+
+    </script>
+</body>
+
+</html>

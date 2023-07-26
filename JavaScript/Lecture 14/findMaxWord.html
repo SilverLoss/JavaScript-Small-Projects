@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find max in each word</title>
+    <script>
+        var s = "it is a long established fact that a reader will be distracted";
+        var arr = [];
+        var s1 = '';
+        var max = "a";
+
+        for (var i of s) {
+            if (i == " ") {
+                arr.push(s1);
+                s1 = "";
+            } else {
+                s1 += i;
+            }
+        }
+        if (s1 != "") {
+            arr.push(s1);
+        }
+        
+        for (var j = 0; j < arr.length; j++) {
+            var s2 = arr[j];  // is
+            for (var k = 0; k < s2.length; k++) {              // i t 
+                if (s2[k].charCodeAt() > max.charCodeAt()) {   // t > i
+                    max = s2[k];  // max = t
+                }
+            }
+            document.write("The maximum character in " + s2 + " word " + max + "<br>");   // t
+            max = "a";
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

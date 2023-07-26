@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validated Password</title>
+    <script>
+        var s = "Example@1997";
+        var flag = false;
+        var count = 0;
+
+        for (var i = 0; i < s.length; i++) {
+            if (s.length > 6) {
+                if ((s[0] >= "A" && s[0] <= "Z")) {
+                    for (var j = 0; j < s.length; j++) {
+                        if (s[j] >= 1 || s[j] < 9) {
+                            count++;
+                        }
+                    }
+                    if (count > 1) {
+                        if (s[i] == '!' || s[i] == '@' || s[i] == "#" || s[i] == "$" || s[i] == "%" || s[i] == "^" || s[i] == "&" || s[i] == "*") {
+                            flag = true;
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+        if (flag) {
+            document.write('Password is valid')
+        } else {
+            document.write("Password is not valid")
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
