@@ -2,12 +2,21 @@ class addMatrix {
   constructor(a, b) {
     this.a = a;
     this.b = b;
+    this.z = [[], []];
   }
-  add() {
-    this.c = this.a + this.b;
+  add() {    
+    for (var i = 0; i < 2; i++) {
+      for (var j = 0; j < 3; j++) {
+        this.z[i][j] = this.a[i][j] + this.b[i][j];
+      }
+    }
   }
   display() {
-    console.log("Addition of matrix values ", this.a, this.b, " is ", this.c);
+    for (var i = 0; i < 2; i++) {
+      for (var j = 0; j < 3; j++) {
+        console.log(this.z[i][j])
+      }
+    }
   }
 }
 
@@ -20,14 +29,6 @@ var arr2 = [
   [8, 11, 13],
 ];
 
-var num1, num2;
-
-for (var i = 0; i < 2; i++) {
-  for (var j = 0; j < 3; j++) {
-    num1 = arr1[i][j];
-    num2 = arr2[i][j];
-    const obj = new addMatrix(num1, num2);
-    obj.add();
-    obj.display();
-  }
-}
+const obj = new addMatrix(arr1, arr2);
+obj.add();
+obj.display();
