@@ -1,27 +1,25 @@
 class checkPrime {
   constructor(a) {
     this.a = a;
-    this.prime = 0;
-    this.i = 1;
+    this.prime = "Prime";
   }
   primeNo() {
-    while (this.i <= this.a) {
-      if (this.a % this.i == 0) {
-        this.prime++;
+    if (this.a == 0 || this.a == 1) {
+      this.prime = "Not prime";
+    } else {
+      for (var i = 2; i < this.a; i++) {
+        if (this.a % i == 0) {
+          this.prime = "Not prime";
+          break;
+        }
       }
-      this.i++;
     }
   }
-
   display() {
-    if (this.prime == 2) {
-      console.log(`${this.a} is a Prime Number`);
-    } else {
-      console.log(`${this.a} is not a Prime Number`);
-    }
+    console.log(this.prime);
   }
 }
-
-const obj = new checkPrime(5);
+var num = 23;
+const obj = new checkPrime(num);
 obj.primeNo();
 obj.display();
