@@ -1,22 +1,18 @@
 class checkPalindrome {
   constructor(s) {
     this.s = s;
-    this.flag = true;
+    this.flag = 'Palindrome';
   }
   check() {
     for (var i = 0; i < this.s.length / 2; i++) {
       if (this.s[i] != this.s[this.s.length - i - 1]) {
-        this.flag = false;
+        this.flag = 'Not palindrome';
         break;
       }
     }
   }
   display() {
-    if(this.flag){
-        console.log("Palindrome")
-    }else{
-        console.log("Not palindrome")
-    }
+   console.log(flag);
   }
 }
 
